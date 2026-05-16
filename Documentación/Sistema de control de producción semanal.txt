@@ -1,0 +1,214 @@
+
+# Documentación del Sistema de Control de Producción
+
+## 1. Nombre del Proyecto
+Sistema de Control de Producción Semanal
+
+
+## 2. Descripción General
+
+El sistema permite simular y analizar la producción semanal de una empresa mediante el uso de vectores en JavaScript.
+
+El encargado podrá:
+1. Seleccionar la cantidad de días de producción.
+2. Generar datos aleatorios de producción.
+3. Mostrar la producción diaria.
+4. Obtener estadísticas automáticas sobre la producción.
+
+
+El sistema está desarrollado con:
+HTML → estructura visual.
+JavaScript → lógica y procesamiento de datos.
+
+
+## 3. Archivo HTML
+Archivo:
+Sistema de contro.html
+
+Función:
+Contiene la interfaz gráfica del sistema.
+
+
+
+## 4. Componentes de la Interfaz
+Selector de días:
+<select id="id-select-dias">
+
+1. Permite seleccionar:
+- 5 días
+- 6 días
+- 7 días
+
+
+Botón “Cargar Producción”
+<button id="id-btn-cargar-produccion">
+
+
+Genera datos aleatorios de producción.
+
+
+Botón “Presentar”
+<button id="id-btn-presentar-produccion">
+
+Muestra la producción diaria almacenada.
+
+
+Área de texto de producción
+<textarea id="id-listado-produccion">
+
+Presenta los datos de producción generados.
+
+
+Botón “Generar”
+<button id ="id-Generar">
+
+Calcula estadísticas de producción.
+
+
+Área de resultados
+<textarea id="id-Respuesta">
+
+Muestra:
+- Producción total
+- Mayor producción
+- Menor producción
+- Promedio
+- Días críticos
+- Valores repetidos
+
+
+Conexión con JavaScript
+<script type="module" src="Productos semanales vectores.js"></script>
+
+
+## 5. Archivo JavaScript
+
+Archivo:
+Productos semanales vectores.js
+
+Función:
+Controla toda la lógica del sistema.
+
+
+## 6. Variables Principales
+
+Selector de días:
+const selectDiasProduccion = document.getElementById('id-select-dias')
+
+Botones:
+const btnCargarProduccion
+const btnPresentarProduccion
+const btnGenerar
+
+Áreas de texto:
+const txtPresentarProduccion
+const txtRespuesta
+
+
+## 7. Vector de Días
+
+const diasTexto = [
+    "Lunes", "Martes", "Miércoles",
+    "Jueves", "Viernes",
+    "Sábado", "Domingo"
+]
+
+Contiene los nombres de los días de la semana.
+
+
+## 8. Vector de Producción
+
+let vectorProduccion = []
+
+Almacena los valores de producción generados aleatoriamente.
+
+
+## 9. Eventos del Sistema
+
+Evento: Cargar Producción
+
+btnCargarProduccion.addEventListener('click', function () {
+
+Función:
+- Obtiene la cantidad de días seleccionada.
+- Llama a la función cargarProduccion().
+
+
+Evento: Presentar Producción
+
+btnPresentarProduccion.addEventListener('click', function () {
+
+Función:
+Recorre el vector y muestra:
+- Número del día
+- Nombre del día
+- Producción generada
+
+
+Evento: Generar Estadísticas
+
+btnGenerar.addEventListener('click', function () {
+
+Función:
+Calcula:
+- Producción total
+- Mayor producción
+- Menor producción
+- Promedio semanal
+- Días sobre el promedio
+- Días críticos
+- Valores repetidos
+
+
+## 10. Función Principal
+
+function cargarProduccion(dimension)
+
+Función:
+Genera números aleatorios entre 50 y 249
+y los guarda en el vector.
+
+Generación aleatoria:
+Math.floor(Math.random() * 200) + 50
+
+
+## 11. Funcionamiento General del Sistema
+
+Paso 1:
+Seleccionar cantidad de días.
+
+Paso 2:
+Presionar “Cargar Producción”.
+
+Paso 3:
+Presionar “Presentar”
+para visualizar los datos.
+
+Paso 4:
+Presionar “Generar”
+para obtener estadísticas.
+
+
+## 12. Tecnologías Utilizadas
+
+- HTML
+- JavaScript
+- DOM
+
+
+## 13. Conceptos Aplicados
+
+- Vectores
+- Ciclos for
+- Condicionales if
+- Eventos
+- DOM
+- Funciones
+- Generación aleatoria
+- Promedios
+- Estadísticas
+
+
+## 14. Conclusión
+
+El programa podrá presentar aleatoriamente cantidades de los valores durante los siete días de la semana, después se genera una suma de todas las cantidades, ver cual día de la semana tiene una cantidad de mayor producción, menor producción, el promedio de las semana, los días sobre el promedio, los días críticos y si llega ha encontrar algún valor repetido.
